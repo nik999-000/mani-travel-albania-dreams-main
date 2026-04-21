@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const FacebookIcon = ({ size = 18 }: { size?: number }) => (
   <svg
@@ -68,6 +68,9 @@ const Footer = () => (
             </a>
             <a href="tel:+355683627190" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <Phone size={16} /> +355 68 362 7190
+            </a>
+            <a href="https://maps.app.goo.gl/vMLB2BBYDxxxUoyf7" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <MapPin size={16} /> Find us on Google Maps
             </a>
             <div className="flex gap-3 mt-2">
               <a href="https://www.facebook.com/zef.mani.5/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-foreground hover:scale-110 transition-all">
