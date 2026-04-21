@@ -1,0 +1,85 @@
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { MapPin, ChevronLeft, ChevronRight } from "lucide-react";
+
+import real7 from "@/assets/real-7.jpg";
+import real14 from "@/assets/real-14.jpg";
+import real9 from "@/assets/real-9.jpg";
+import real17 from "@/assets/real-17.jpg";
+
+const trips = [
+  { image: real7, title: "Liqeni i Komanit", location: "Komani & Shala" },
+  { image: real14, title: "Aventurë në Kanion", location: "Kanionet e Shqipërisë" },
+  { image: real9, title: "Shpella e Fshehtë", location: "Liqeni & Shpella" },
+  { image: real17, title: "Lumi i Shalës", location: "Theth & Shala" },
+];
+
+const TripsSection = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const scroll = (dir: number) => {
+    scrollRef.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
+  };
+
+  return (
+    <section id="trips" className="section-padding bg-background" ref={ref}>
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <p className="text-sm tracking-[0.2em] uppercase text-primary font-medium mb-3">Popular Destinations</p>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
+            Curated Trips
+          </h2>
+        </motion.div>
+
+        <div className="relative">
+          <button
+            onClick={() => scroll(-1)}
+            className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 glass rounded-full items-center justify-center text-foreground hover:scale-110 transition-transform"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={() => scroll(1)}
+            className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 glass rounded-full items-center justify-center text-foreground hover:scale-110 transition-transform"
+          >
+            <ChevronRight size={20} />
+          </button>
+
+          <div
+            ref={scrollRef}
+            className="flex gap-5 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 -mx-5 px-5 md:mx-0 md:px-0"
+          >
+            {trips.map((trip, i) => (
+              <motion.div
+                key={trip.title}
+                initial={{ opacity: 0, y: 40 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                className="flex-shrink-0 w-[280px] md:w-[300px] snap-start group cursor-pointer"
+              >
+                <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
+                  <img
+                    src={trip.image}
+                    alt={trip.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-300" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TripsSection;

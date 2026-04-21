@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/manitravel-removebg-preview.png" />
+    <title>Mani Travel — Explore Albania</title>
+    <meta name="description" content="Discover Albania's hidden gems with Mani Travel. Premium guided tours through pristine beaches, ancient cities, and breathtaking mountains." />
+    <meta name="author" content="Mani Travel" />
+    <meta property="og:title" content="Mani Travel — Explore Albania" />
+    <meta property="og:description" content="Premium guided tours through Albania's most beautiful destinations." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <style>
+      :root {
+        --background: 210 20% 98%;
+        --primary: 200 80% 50%;
+      }
+      body {
+        margin: 0;
+        background-color: hsl(210, 20%, 98%);
+        overflow-x: hidden;
+      }
+      #root-loader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: hsl(210, 20%, 98%);
+        z-index: 9999;
+        transition: opacity 0.5s ease-out, visibility 0.5s;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      .loader-logo {
+        width: 120px;
+        height: auto;
+        margin-bottom: 24px;
+        animation: pulse 2s infinite ease-in-out;
+      }
+      .loader-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(0, 150, 255, 0.1);
+        border-top: 3px solid hsl(200, 80%, 50%);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      .loader-text {
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        color: hsl(220, 20%, 20%);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.8; }
+      }
+      .loaded #root-loader {
+        opacity: 0;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root-loader">
+      <img src="/manitravel-removebg-preview.png" alt="Mani Travel" class="loader-logo" />
+      <div class="loader-spinner"></div>
+      <div class="loader-text">Loading Adventure...</div>
+    </div>
+    
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Fallback to remove loader if React fails to mount for some reason
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          document.body.classList.add('loaded');
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>
