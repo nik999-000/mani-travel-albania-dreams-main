@@ -6,8 +6,12 @@ import real7 from "@/assets/real-7.jpg";
 import real14 from "@/assets/real-14.jpg";
 import real9 from "@/assets/real-9.jpg";
 import real17 from "@/assets/real-17.jpg";
+import image111 from "@/assets/111.jpeg";
+import video111 from "@/assets/111.mp4";
 
 const trips = [
+  { video: video111, title: "Eksperiencë me Barkë", location: "Lumi i Shalës" },
+  { image: image111, title: "Pamje Mahnitëse", location: "Natyra Shqiptare" },
   { image: real7, title: "Liqeni i Komanit", location: "Komani & Shala" },
   { image: real14, title: "Aventurë në Kanion", location: "Kanionet e Shqipërisë" },
   { image: real9, title: "Shpella e Fshehtë", location: "Liqeni & Shpella" },
@@ -65,12 +69,23 @@ const TripsSection = () => {
                 className="flex-shrink-0 w-[280px] md:w-[300px] snap-start group cursor-pointer"
               >
                 <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
-                  <img
-                    src={trip.image}
-                    alt={trip.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+                  {trip.video ? (
+                    <video
+                      src={trip.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  ) : (
+                    <img
+                      src={trip.image}
+                      alt={trip.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-300" />
                 </div>
               </motion.div>
