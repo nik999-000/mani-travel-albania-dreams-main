@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import heroImage from "@/assets/WhatsApp Image 2026-04-15 at 12.33.53.jpeg";
+import heroImage from "@/assets/1.webp";
 
 const HeroSection = () => {
   const [offsetY, setOffsetY] = useState(0);
