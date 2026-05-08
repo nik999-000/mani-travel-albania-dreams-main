@@ -2,20 +2,26 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 
-import real7 from "@/assets/real-7.jpg";
-import real14 from "@/assets/real-14.jpg";
-import real9 from "@/assets/real-9.jpg";
-import real17 from "@/assets/real-17.jpg";
+import img2 from "@/assets/2.webp";
+import img6 from "@/assets/6.webp";
+import img4 from "@/assets/4.webp.webp";
+import img5 from "@/assets/5.webp.webp";
+import video2 from "@/assets/2.mp4";
+import video3 from "@/assets/3.mp4";
+import video4 from "@/assets/4.mp4";
 import image111 from "@/assets/111.jpeg";
 import video111 from "@/assets/111.mp4";
 
 const trips = [
   { video: video111, title: "Eksperiencë me Barkë", location: "Lumi i Shalës" },
+  { video: video2, title: "Lundrim në Lumë", location: "Shala River" },
+  { video: video3, title: "Eksplorim me Barkë", location: "Koman Lake" },
+  { video: video4, title: "Bukuria e Natyrës", location: "Alpet Shqiptare" },
   { image: image111, title: "Pamje Mahnitëse", location: "Natyra Shqiptare" },
-  { image: real7, title: "Liqeni i Komanit", location: "Komani & Shala" },
-  { image: real14, title: "Aventurë në Kanion", location: "Kanionet e Shqipërisë" },
-  { image: real9, title: "Shpella e Fshehtë", location: "Liqeni & Shpella" },
-  { image: real17, title: "Lumi i Shalës", location: "Theth & Shala" },
+  { image: img2, title: "Liqeni i Komanit", location: "Komani & Shala" },
+  { image: img6, title: "Lumi i Shalës", location: "Theth & Shala" },
+  { image: img4, title: "Pamje Mahnitëse", location: "Lumi i Shalës" },
+  { image: img5, title: "Aventurë në Natyrë", location: "Shqipëria Veriore" },
 ];
 
 const TripsSection = () => {
