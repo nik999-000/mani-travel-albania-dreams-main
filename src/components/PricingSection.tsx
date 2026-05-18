@@ -4,8 +4,8 @@ import { useRef } from "react";
 const pricingOptions = [
   {
     title: "Group Experience",
-    price: "€15",
-    priceLek: "1,500 Lekë",
+    price: "€20",
+    priceLek: "2,000 Lekë",
     per: "per person",
     description: "Join fellow travelers for a guided excursion. Perfect for families, friends, and meeting new people. Departure at 9:00 and return at 15:00.",
   },

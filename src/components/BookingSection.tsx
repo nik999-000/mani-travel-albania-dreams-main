@@ -83,7 +83,7 @@ const BookingSection = () => {
               className="w-full px-5 py-4 rounded-xl bg-secondary/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all font-body"
             >
               <option value="">Select Trip</option>
-              <option>Group Experience (€15 / 1,500 Lekë per person)</option>
+              <option>Group Experience (€20 / 2,000 Lekë per person)</option>
               <option>Private Tour (1 Hour) (€70 / 7,000 Lekë)</option>
               <option>Full Day Private Experience (€250 / 25,000 Lekë)</option>
             </select>
