@@ -6,6 +6,7 @@ import MobileNav from "@/components/MobileNav";
 // Lazy load sections below the fold
 const TripsSection = lazy(() => import("@/components/TripsSection"));
 const GallerySection = lazy(() => import("@/components/GallerySection"));
+const PlanningSection = lazy(() => import("@/components/PlanningSection"));
 const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
 const PricingSection = lazy(() => import("@/components/PricingSection"));
 const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
@@ -25,6 +26,7 @@ const Index = () => (
     
     <Suspense fallback={<SectionLoader />}>
       <TripsSection />
+      <PlanningSection />
       <GallerySection />
       <WhyChooseUs />
       <PricingSection />
