@@ -73,22 +73,19 @@ const PricingSection = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {p.description}
               </p>
+              {p.title === "Private Tour (1.5 Hours)" && (
+                <div className="mt-6 rounded-xl overflow-hidden">
+                  <img 
+                    src={adventureImage} 
+                    alt="Private Tour" 
+                    className="w-full h-auto object-cover hover:scale-[1.05] transition-transform duration-500"
+                  />
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 w-full max-w-5xl mx-auto rounded-3xl overflow-hidden glass p-2"
-        >
-          <img 
-            src={adventureImage} 
-            alt="Tour Experience" 
-            className="w-full h-auto rounded-2xl hover:scale-[1.02] transition-transform duration-700"
-          />
-        </motion.div>
       </div>
     </section>
   );
