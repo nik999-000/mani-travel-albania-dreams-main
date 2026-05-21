@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import adventureImage from "../assets/888.webp";
 
 const pricingOptions = [
   {
@@ -15,6 +16,13 @@ const pricingOptions = [
     priceLek: "7,000 Lekë",
     per: "per hour",
     description: "A personalized and exclusive short tour, tailored specifically to your unique interests and pace.",
+  },
+  {
+    title: "Private Tour (1.5 Hours)",
+    price: "€100",
+    priceLek: "10,000 Lekë",
+    per: "per trip",
+    description: "Departure at any time. The trip lasts 1 hour and 30 minutes.",
   },
   {
     title: "Full Day Private Experience",
@@ -45,7 +53,7 @@ const PricingSection = () => {
             Choose Your Adventure
           </h2>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pricingOptions.map((p, i) => (
             <motion.div
               key={p.title}
@@ -68,6 +76,19 @@ const PricingSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-16 w-full max-w-5xl mx-auto h-[300px] md:h-[500px] rounded-3xl overflow-hidden glass p-2"
+        >
+          <img 
+            src={adventureImage} 
+            alt="Tour Experience" 
+            className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
+          />
+        </motion.div>
       </div>
     </section>
   );
