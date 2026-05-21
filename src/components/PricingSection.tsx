@@ -81,12 +81,12 @@ const PricingSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 w-full max-w-5xl mx-auto h-[300px] md:h-[500px] rounded-3xl overflow-hidden glass p-2"
+          className="mt-16 w-full max-w-5xl mx-auto rounded-3xl overflow-hidden glass p-2"
         >
           <img 
             src={adventureImage} 
             alt="Tour Experience" 
-            className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
+            className="w-full h-auto rounded-2xl hover:scale-[1.02] transition-transform duration-700"
           />
         </motion.div>
       </div>
