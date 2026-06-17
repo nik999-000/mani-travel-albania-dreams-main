@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import heroImage from "@/assets/1.webp";
+import heroImage from "@/assets/banja.webp";
 
 const HeroSection = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -13,20 +13,20 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative h-screen min-h-[600px] overflow-hidden">
+    <section id="hero" className="relative h-[100dvh] min-h-[600px] overflow-hidden">
       {/* Preload hero image */}
       <img src={heroImage} alt="" className="hidden" aria-hidden="true" loading="eager" />
       
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-[center_20%] md:bg-center bg-no-repeat transition-transform duration-700"
         style={{
           backgroundImage: `url(${heroImage})`,
-          transform: `translateY(${offsetY * 0.4}px) scale(1.05)`,
+          transform: `translateY(${offsetY * 0.3}px) scale(1.05)`,
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background/95 md:from-black/50 md:via-black/20 md:to-background" />
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-5 text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 md:px-8 text-center pt-10 md:pt-0">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
